@@ -1,0 +1,17 @@
+name: Verify Branch Protection Rules
+
+on: [push]
+
+jobs:
+  verify_code_owners:
+    runs-on: ubuntu-latest
+    name: A job to verify Code Owners in CODEOWNERS file against input.
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Verify Branch Protection Rules
+        uses: ./verify-branch-protection-rules # Uses an action in the root directory
+        with:
+          my-token: ${{ secrets.GITHUB_TOKEN }}

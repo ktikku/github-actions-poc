@@ -1,0 +1,9 @@
+name: 'Verify Branch Protection Rules'
+description: 'Verify Branch Protection Rules'
+inputs:
+  my-token:  # id of input
+    description: 'Github Token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

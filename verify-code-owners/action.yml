@@ -1,0 +1,9 @@
+name: 'Verify Code Owners'
+description: 'Verify Code Owners in CODEOWNERS file with a provided input.'
+inputs:
+  code-owners:  # id of input
+    description: 'Intended Code Owners'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
