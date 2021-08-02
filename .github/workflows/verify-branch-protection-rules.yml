@@ -5,6 +5,8 @@ on: [push]
 jobs:
   verify_code_owners:
     runs-on: ubuntu-latest
+    permissions:
+      issues: read 
     name: A job to verify Code Owners in CODEOWNERS file against input.
     steps:
       # To use this repository's private action,
