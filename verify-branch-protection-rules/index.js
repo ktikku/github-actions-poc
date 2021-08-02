@@ -11,7 +11,7 @@ async function run() {
     const octokit = github.getOctokit(myToken);
     const result = await octokit.graphql(`
     {
-      repository(owner: "EliLillyCo", name: "testing-github-actions") {
+      repository(owner: "ktikku", name: "github-actions-poc") {
         branchProtectionRules(first: 100) {
           nodes {
             pattern
