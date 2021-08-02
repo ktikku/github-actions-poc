@@ -6302,7 +6302,8 @@ async function run() {
       }
     }    
   `);
-    console.log(result.repository);
+    console.log(result.repository.branchProtectionRules);
+    console.log(result.repository.branchProtectionRules.nodes);
   } catch (error) {
     core.setFailed(error.message);
   }
