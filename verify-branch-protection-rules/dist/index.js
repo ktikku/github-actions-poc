@@ -6302,8 +6302,14 @@ async function run() {
         }
       }
     }    
-  `);
-    console.log(result);
+  `,
+  {
+    headers: {
+      authorization: `token secret123`,
+    },
+  });
+    console.log(result.repository.branchProtectionRules);
+    console.log(result.repository.branchProtectionRules.nodes);
   } catch (error) {
     core.setFailed(error.message);
   }
