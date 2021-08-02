@@ -6289,7 +6289,6 @@ async function run() {
     // myToken: ${{ secrets.GITHUB_TOKEN }}
     // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret
     const myToken = core.getInput('my-token');
-    console.log(myToken);
     const octokit = github.getOctokit(myToken);
     const result = await octokit.graphql(`
     {
@@ -6305,11 +6304,10 @@ async function run() {
   `,
   {
     headers: {
-      authorization: `token secret123`,
+      authorization: `token myToken`,
     },
   });
-    console.log(result.repository.branchProtectionRules);
-    console.log(result.repository.branchProtectionRules.nodes);
+    console.log(result);
   } catch (error) {
     core.setFailed(error.message);
   }
