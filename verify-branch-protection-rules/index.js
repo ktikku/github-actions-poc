@@ -20,7 +20,7 @@ async function run() {
       }
     }
   `);
-    console.log(result);
+    console.log(result.repository.issues);
   } catch (error) {
     core.setFailed(error.message);
   }
