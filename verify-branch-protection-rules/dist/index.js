@@ -6303,8 +6303,7 @@ async function run() {
       }
     }    
   `);
-    console.log(result.repository.branchProtectionRules);
-    console.log(result.repository.branchProtectionRules.nodes);
+    console.log(result);
   } catch (error) {
     core.setFailed(error.message);
   }
