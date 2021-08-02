@@ -6293,20 +6293,14 @@ async function run() {
     const result = await octokit.graphql(`
     {
       repository(owner: "ktikku", name: "github-actions-poc") {
-        branchProtectionRules(first: 100) {
+        issues(first: 100) {
           nodes {
-            pattern
-            requiredApprovingReviewCount
+            number
           }
         }
       }
-    }    
-  `,
-  {
-    headers: {
-      authorization: `token myToken`,
-    },
-  });
+    }
+  `);
     console.log(result);
   } catch (error) {
     core.setFailed(error.message);
